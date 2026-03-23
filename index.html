@@ -1,0 +1,407 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1B2B5E;--navy2:#243672;--blue:#2563EB;--blue-lt:#EFF6FF;
+  --text:#111827;--muted:#6B7280;--border:#E5E7EB;--bg:#F9FAFB;
+}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 6%;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:1.05rem;font-weight:700;color:var(--navy);letter-spacing:-0.3px}
+.nav-logo em{color:var(--blue);font-style:normal}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0e1b3d 0%,var(--navy) 55%,#1e3a8a 100%);padding:90px 8% 80px;display:flex;align-items:center;min-height:92vh}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:flex;align-items:center;gap:80px}
+.hero-txt{flex:1}
+.hero-badge{display:inline-block;border:1px solid rgba(147,197,253,.4);color:#93c5fd;padding:5px 14px;border-radius:20px;font-size:0.73rem;font-weight:500;letter-spacing:1.2px;margin-bottom:22px}
+.hero h1{font-size:2.8rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:8px}
+.hero h1 span{color:#60a5fa}
+.hero-role{font-size:0.95rem;color:rgba(255,255,255,.65);margin-bottom:22px}
+.hero-quote{font-size:1.05rem;color:rgba(255,255,255,.88);line-height:1.7;border-left:3px solid #60a5fa;padding-left:18px;margin-bottom:36px}
+.hero-stats{display:flex;gap:36px;margin-bottom:38px}
+.stat-n{font-size:1.9rem;font-weight:700;color:#fff;display:block;line-height:1}
+.stat-l{font-size:0.75rem;color:rgba(255,255,255,.55);margin-top:4px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-p{background:var(--blue);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:0.88rem;transition:background .2s;border:2px solid var(--blue)}
+.btn-p:hover{background:#1d4ed8}
+.btn-o{background:transparent;color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:0.88rem;border:2px solid rgba(255,255,255,.35);transition:all .2s}
+.btn-o:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-photo{width:320px;height:420px;flex-shrink:0;border-radius:18px;overflow:hidden;border:2px solid rgba(255,255,255,.1);box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative;background:linear-gradient(160deg,#1e3a8a,#374151)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.photo-initials{width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:rgba(255,255,255,.7)}
+.photo-placeholder p{font-size:0.78rem;color:rgba(255,255,255,.35)}
+
+/* SECTIONS */
+.sec{padding:88px 8%}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec-lbl{font-size:0.72rem;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:block}
+.sec-h{font-size:2rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:14px}
+.sec-sub{font-size:0.93rem;color:var(--muted);line-height:1.85;max-width:580px;margin-bottom:56px}
+.center{text-align:center}
+.center .sec-sub{margin:0 auto 56px}
+
+/* ABOUT */
+.about-bg{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-bio p{color:var(--muted);line-height:1.9;margin-bottom:18px;font-size:0.92rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.tag{background:#fff;border:1px solid var(--border);padding:5px 14px;border-radius:20px;font-size:0.8rem;color:var(--navy);font-weight:500}
+
+/* TIMELINE */
+.tl{list-style:none}
+.tl-item{display:flex;gap:18px;margin-bottom:28px;position:relative}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:17px;top:36px;bottom:-28px;width:1px;background:var(--border)}
+.tl-dot{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.65rem;color:#fff;font-weight:700;z-index:1}
+.tl-yr{font-size:0.75rem;color:var(--blue);font-weight:700;margin-bottom:3px}
+.tl-ttl{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.tl-desc{font-size:0.83rem;color:var(--muted);line-height:1.7}
+
+/* PHILOSOPHY */
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.phil-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:36px 28px;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.phil-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue))}
+.phil-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.07)}
+.phil-ico{font-size:1.5rem;margin-bottom:16px;display:block;width:44px;height:44px;background:var(--blue-lt);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.phil-card h3{font-size:0.97rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.phil-card p{font-size:0.84rem;color:var(--muted);line-height:1.8}
+
+/* CURRICULUM */
+.curr-bg{background:var(--bg)}
+.curr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.course{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;transition:transform .25s,box-shadow .25s}
+.course:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.07)}
+.course-n{font-size:0.7rem;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px;display:block}
+.course h3{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.45}
+.course p{font-size:0.82rem;color:var(--muted);line-height:1.75}
+.ctags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ctag{background:var(--blue-lt);color:var(--blue);padding:3px 9px;border-radius:4px;font-size:0.72rem;font-weight:500}
+
+/* CLIENTS */
+.clients-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cl{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px 12px;display:flex;align-items:center;justify-content:center;min-height:70px;transition:all .2s}
+.cl:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.cl span{font-size:0.78rem;font-weight:700;color:#374151;text-align:center;line-height:1.4}
+
+/* CONTACT */
+.contact-bg{background:var(--navy)}
+.contact-bg .sec-lbl{color:#93c5fd}
+.contact-bg .sec-h{color:#fff}
+.contact-bg .sec-sub{color:rgba(255,255,255,.55)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.c-items{display:flex;flex-direction:column;gap:22px}
+.c-item{display:flex;align-items:center;gap:16px}
+.c-ico{width:44px;height:44px;background:rgba(37,99,235,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.c-lbl{font-size:0.75rem;color:rgba(255,255,255,.45);display:block;margin-bottom:3px;font-weight:500}
+.c-val{color:#fff;font-size:0.9rem;font-weight:500;transition:color .2s}
+.c-val:hover{color:#93c5fd}
+.cta-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:38px}
+.cta-box h3{font-size:1.3rem;color:#fff;font-weight:700;margin-bottom:10px;line-height:1.4}
+.cta-box p{color:rgba(255,255,255,.55);font-size:0.86rem;line-height:1.85;margin-bottom:24px}
+.cta-box strong{color:rgba(255,255,255,.85)}
+
+/* FOOTER */
+footer{background:#080f26;padding:28px 8%;display:flex;justify-content:space-between;align-items:center}
+.foot-brand{font-size:0.95rem;font-weight:700;color:rgba(255,255,255,.75)}
+.foot-copy{font-size:0.78rem;color:rgba(255,255,255,.3)}
+
+/* FADE-IN */
+.fi{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fi.on{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:780px){
+  .hero-inner{flex-direction:column-reverse;gap:36px}
+  .hero-photo{width:200px;height:260px}
+  .hero h1{font-size:2rem}
+  .about-grid,.phil-grid,.curr-grid,.contact-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(3,1fr)}
+  .sec{padding:64px 5%}
+  nav{padding:0 5%}
+  footer{flex-direction:column;gap:8px;text-align:center}
+  .nav-links{gap:1rem}
+}
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Beau<em>Sales</em>Lab</div>
+  <ul class="nav-links">
+    <li><a href="#about">소개</a></li>
+    <li><a href="#philosophy">교육철학</a></li>
+    <li><a href="#curriculum">커리큘럼</a></li>
+    <li><a href="#clients">고객사</a></li>
+    <li><a href="#contact">문의</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-txt">
+      <span class="hero-badge">B2B SALES &amp; MARKETING EXPERT</span>
+      <h1>이보원<br><span>뷰세일즈랩</span></h1>
+      <p class="hero-role">BeauSalesLab 대표 &nbsp;|&nbsp; B2B 영업·마케팅 교육 전문가</p>
+      <p class="hero-quote">삼성SDI·기아자동차 현장 경험을 기반으로<br>기업 맞춤형 B2B 영업·마케팅 교육을 설계합니다.</p>
+      <div class="hero-stats">
+        <div><span class="stat-n">13+</span><div class="stat-l">년 현장 경력</div></div>
+        <div><span class="stat-n">8+</span><div class="stat-l">년 전문 강사</div></div>
+        <div><span class="stat-n">200+</span><div class="stat-l">강의 고객사</div></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-p">강의 문의하기</a>
+        <a href="#curriculum" class="btn-o">커리큘럼 보기</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img id="prof-img" src="photo.png" alt="이보원 뷰세일즈랩 대표" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+     </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about-bg" id="about">
+  <div class="sec-inner about-grid">
+    <div class="fi">
+      <span class="sec-lbl">About</span>
+      <h2 class="sec-h">현장을 알아야<br>교육이 바뀝니다</h2>
+      <div class="about-bio">
+        <p>안녕하세요, 뷰세일즈랩 대표 이보원입니다. 삼성SDI·기아자동차에서 B2B 영업·마케팅 실무를 직접 경험한 후, 현장 경험을 기반으로 한 전문 교육 강사로 활동하고 있습니다.</p>
+        <p>단순 이론 전달이 아닌, 각 기업의 산업·고객 특성을 분석하여 <strong>커스터마이즈된 실전 교육</strong>을 설계하는 것이 핵심 역량입니다. B2B 영업·마케팅 교육에만 집중하는 전문 트레이너로서, 독자적인 커스터마이즈 방법론을 기반으로 기업별 맞춤 프로그램을 설계합니다.</p>
+        <p>삼성전자·LG에너지솔루션·KT 등 국내 주요 대기업과 글로벌 기업의 영업·마케팅 조직을 대상으로 교육을 진행해왔습니다.</p>
+      </div>
+      <div class="tags">
+        <span class="tag">B2B 영업 전략</span>
+        <span class="tag">신규고객 개발</span>
+        <span class="tag">영업 파이프라인</span>
+        <span class="tag">커스터마이즈 교육</span>
+        <span class="tag">기업 맞춤 설계</span>
+        <span class="tag">AI 활용 영업</span>
+      </div>
+    </div>
+    <div class="fi">
+      <ul class="tl">
+        <li class="tl-item">
+          <div class="tl-dot">현재</div>
+          <div>
+            <div class="tl-yr">2017 – 현재</div>
+            <div class="tl-ttl">BeauSalesLab 대표 / 트레이너</div>
+            <div class="tl-desc">B2B 영업·마케팅 커스터마이즈 교육 설계 및 진행. 삼성전자·LG에너지솔루션·KT 등 국내외 대기업 포함 200개사 이상과 협력.</div>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-dot">前</div>
+          <div>
+            <div class="tl-yr">~2017</div>
+            <div class="tl-ttl">기아자동차 B2B 마케팅·영업</div>
+            <div class="tl-desc">법인 영업 및 B2B 마케팅 전략 수립·실행. 대형 기업 고객 대상 영업 프로세스 전반 담당.</div>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-dot">前</div>
+          <div>
+            <div class="tl-yr">초기 경력</div>
+            <div class="tl-ttl">삼성SDI 영업·마케팅</div>
+            <div class="tl-desc">글로벌 B2B 영업 환경에서 신규 고객 개발 및 거래처 관리. 기술 중심 제품의 가치 기반 영업 실무 경험.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="sec" id="philosophy">
+  <div class="sec-inner">
+    <div class="center fi">
+      <span class="sec-lbl">교육철학</span>
+      <h2 class="sec-h">이보원 강사가 교육하는 방식</h2>
+      <p class="sec-sub">현장 경험 없는 강의는 공허합니다. 모든 교육은 현장 맥락에서 출발하고, 실전에서 즉시 쓸 수 있는 도구로 마무리됩니다.</p>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card fi">
+        <div class="phil-ico">🎯</div>
+        <h3>철저한 사전 커스터마이즈</h3>
+        <p>교육 전 고객사의 산업·영업 방식·조직 특성·현재 고민을 사전에 파악합니다. 일반 교안이 아닌, 그 회사만을 위한 콘텐츠를 설계합니다.</p>
+      </div>
+      <div class="phil-card fi">
+        <div class="phil-ico">🔧</div>
+        <h3>실전 워크숍 중심 설계</h3>
+        <p>강의 시간의 절반 이상을 실습·토론으로 채웁니다. 교육 현장에서 직접 적용하고 피드백을 받는 구조로 학습 전이율을 극대화합니다.</p>
+      </div>
+      <div class="phil-card fi">
+        <div class="phil-ico">📊</div>
+        <h3>현장 경험 기반 사례</h3>
+        <p>삼성SDI·기아자동차의 실제 영업·마케팅 경험에서 나온 사례를 중심으로 설명합니다. 현직자들이 공감하는 언어로 전달합니다.</p>
+      </div>
+      <div class="phil-card fi">
+        <div class="phil-ico">🏭</div>
+        <h3>산업을 가리지 않는 적용력</h3>
+        <p>제조·IT·금융·유통·물류·식품 등 업종과 무관하게 교육을 설계합니다. 200개사 이상의 다양한 산업 경험이 어떤 현장에서도 최적화된 콘텐츠를 만들어냅니다.</p>
+      </div>
+      <div class="phil-card fi">
+        <div class="phil-ico">🧭</div>
+        <h3>B2B에만 집중하는 전문성</h3>
+        <p>B2B 영업과 마케팅만을 전문으로 합니다. 협력사 영업·채널 영업·기술 영업까지 깊이 있게 다룰 수 있는 차별점입니다.</p>
+      </div>
+      <div class="phil-card fi">
+        <div class="phil-ico">🤖</div>
+        <h3>AI 활용 실전 통합</h3>
+        <p>최신 AI 도구를 B2B 영업·마케팅에 통합하는 방법을 교육합니다. ChatGPT 등을 실무에 즉시 적용할 수 있도록 안내합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="sec curr-bg" id="curriculum">
+  <div class="sec-inner">
+    <div class="center fi">
+      <span class="sec-lbl">Curriculum</span>
+      <h2 class="sec-h">주요 강의 커리큘럼</h2>
+      <p class="sec-sub">각 과정은 기업 상황에 맞게 커스터마이즈되어 제공됩니다. 단독 과정 또는 연계 프로그램으로 구성 가능합니다.</p>
+    </div>
+    <div class="curr-grid">
+      <div class="course fi">
+        <span class="course-n">COURSE 01</span>
+        <h3>B2B 신규고객 개발 마스터클래스</h3>
+        <p>ICP 설정부터 리드 발굴, 첫 접촉까지 신규 고객 개발의 전 과정을 다룹니다. 프로스펙팅 전략 수립 워크숍 포함.</p>
+        <div class="ctags"><span class="ctag">프로스펙팅</span><span class="ctag">ICP 설계</span><span class="ctag">리드 발굴</span></div>
+      </div>
+      <div class="course fi">
+        <span class="course-n">COURSE 02</span>
+        <h3>B2B 영업 협상 마스터클래스</h3>
+        <p>가격 협상·조건 협상에서 주도권을 잡는 B2B 협상 전략. 실전 케이스 기반 시뮬레이션과 협상 스크립트 설계 포함.</p>
+        <div class="ctags"><span class="ctag">협상 전략</span><span class="ctag">가격 협상</span><span class="ctag">시뮬레이션</span></div>
+      </div>
+      <div class="course fi">
+        <span class="course-n">COURSE 03</span>
+        <h3>KAM 핵심고객 관리 전략</h3>
+        <p>주요 고객사를 장기적으로 유지·성장시키는 Key Account Management 전략. 고객 분석·관계 설계·확장 영업까지 다룹니다.</p>
+        <div class="ctags"><span class="ctag">KAM</span><span class="ctag">고객 유지</span><span class="ctag">업셀링</span></div>
+      </div>
+      <div class="course fi">
+        <span class="course-n">COURSE 04</span>
+        <h3>영업 커뮤니케이션 스킬</h3>
+        <p>제안서 작성부터 프레젠테이션·미팅 커뮤니케이션까지. 고객을 설득하는 스토리텔링 구조와 전달력을 집중 훈련합니다.</p>
+        <div class="ctags"><span class="ctag">제안서</span><span class="ctag">프레젠테이션</span><span class="ctag">스토리텔링</span></div>
+      </div>
+      <div class="course fi">
+        <span class="course-n">COURSE 05</span>
+        <h3>B2B 마케팅 전략과 실행</h3>
+        <p>B2B 마케팅 핵심 프레임워크부터 콘텐츠 마케팅·디지털 채널 활용, 영업-마케팅 얼라인먼트까지 다룹니다.</p>
+        <div class="ctags"><span class="ctag">마케팅 전략</span><span class="ctag">콘텐츠</span><span class="ctag">MQL/SQL</span></div>
+      </div>
+      <div class="course fi">
+        <span class="course-n">COURSE 06</span>
+        <h3>AI 활용 B2B 영업·마케팅</h3>
+        <p>ChatGPT 등 AI 도구를 B2B 영업·마케팅에 즉시 적용하는 실전 워크숍. 제조·서비스업 사례 중심.</p>
+        <div class="ctags"><span class="ctag">AI 활용</span><span class="ctag">ChatGPT</span><span class="ctag">자동화</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="sec" id="clients">
+  <div class="sec-inner">
+    <div class="center fi">
+      <span class="sec-lbl">Clients</span>
+      <h2 class="sec-h">함께한 고객사</h2>
+      <p class="sec-sub">국내 주요 대기업 및 글로벌 기업의 영업·마케팅 조직과 함께 성장해왔습니다.</p>
+    </div>
+    <div class="clients-grid fi">
+      <div class="cl"><span>삼성전자</span></div>
+      <div class="cl"><span>삼성 SDS</span></div>
+      <div class="cl"><span>삼성카드</span></div>
+      <div class="cl"><span>LG에너지솔루션</span></div>
+      <div class="cl"><span>LG화학</span></div>
+      <div class="cl"><span>KT</span></div>
+      <div class="cl"><span>KT클라우드</span></div>
+      <div class="cl"><span>효성</span></div>
+      <div class="cl"><span>신세계푸드</span></div>
+      <div class="cl"><span>오비맥주</span></div>
+      <div class="cl"><span>LX판토스</span></div>
+      <div class="cl"><span>카카오모빌리티</span></div>
+      <div class="cl"><span>유미코아</span></div>
+      <div class="cl"><span>램리서치</span></div>
+      <div class="cl"><span>현대해상</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact-bg" id="contact">
+  <div class="sec-inner contact-grid">
+    <div class="fi">
+      <span class="sec-lbl">Contact</span>
+      <h2 class="sec-h">강의 문의</h2>
+      <p class="sec-sub">기업 교육 프로그램·워크숍·세미나 등 다양한 형태로 협력 가능합니다.</p>
+      <div class="c-items">
+        <div class="c-item">
+          <div class="c-ico">📱</div>
+          <div><span class="c-lbl">전화 / 문자</span><a class="c-val" href="tel:01030675001">010-3067-5001</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-ico">✉️</div>
+          <div><span class="c-lbl">이메일</span><a class="c-val" href="mailto:beauslab@gmail.com">beauslab@gmail.com</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-ico">🌐</div>
+          <div><span class="c-lbl">공식 홈페이지</span><a class="c-val" href="http://www.beausaleslab.co.kr" target="_blank">www.beausaleslab.co.kr</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-ico">📝</div>
+          <div><span class="c-lbl">B2B 영업 인사이트 블로그</span><a class="c-val" href="https://b2bsaleslab.tistory.com/" target="_blank">b2bsaleslab.tistory.com</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-box fi">
+      <h3>맞춤형 교육 프로그램을<br>설계해 드립니다</h3>
+      <p>귀사의 영업 조직이 직면한 문제와 목표를 먼저 파악합니다. 일반 강의가 아닌 귀사만을 위한 커스터마이즈 교육을 제안드립니다.<br><br>문의 시 <strong>교육 목적·대상·인원·희망 일정</strong>을 함께 남겨 주시면 빠르게 회신 드리겠습니다.</p>
+      <a href="mailto:beauslab@gmail.com" class="btn-p" style="display:inline-block">이메일로 문의하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">BeauSalesLab · 뷰세일즈랩 이보원</div>
+  <div class="foot-copy">© 2026 BeauSalesLab. B2B 영업·마케팅 교육 전문</div>
+</footer>
+
+<script>
+(async()=>{
+  try{
+    const data=await window.fs.readFile('첨부2',{encoding:'base64'}).catch(()=>null)
+      ||await window.fs.readFile('image.jpg',{encoding:'base64'}).catch(()=>null)
+      ||await window.fs.readFile('photo.jpg',{encoding:'base64'}).catch(()=>null);
+    if(data){
+      const img=document.getElementById('prof-img');
+      img.src='data:image/jpeg;base64,'+data;
+      img.style.display='block';
+      document.getElementById('ph-pl').style.display='none';
+    }
+  }catch(e){}
+})();
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
