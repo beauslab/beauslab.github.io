@@ -1,5 +1,4 @@
 <meta charset="UTF-8">
-<meta name="naver-site-verification" content="1824ed7284e6e4a511fe93cd1aa9483a6305617d" />
 <meta name="description" content="이보원 B2B 영업 마케팅 교육 강사. 뷰세일즈랩 대표. 삼성전자 LG KT 등 200개사 기업 강의 전문.">
 <meta name="keywords" content="이보원, 뷰세일즈랩, BeauSalesLab, B2B 영업 강사, B2B 마케팅 교육, 기업 강의, 영업 교육 전문가">
 <meta name="author" content="이보원">
@@ -169,11 +168,7 @@ footer{background:#080f26;padding:28px 8%;display:flex;justify-content:space-bet
       </div>
     </div>
     <div class="hero-photo">
-      <img id="prof-img" src="" alt="이보원 뷰세일즈랩 대표" style="display:none">
-      <div class="photo-placeholder" id="ph-pl">
-        <div class="photo-initials">이보원</div>
-        <p>사진 로딩 중...</p>
-      </div>
+      <img src="photo.png" alt="이보원 뷰세일즈랩 대표" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
     </div>
   </div>
 </section>
@@ -390,20 +385,6 @@ footer{background:#080f26;padding:28px 8%;display:flex;justify-content:space-bet
 </footer>
 
 <script>
-(async()=>{
-  try{
-    const data=await window.fs.readFile('첨부2',{encoding:'base64'}).catch(()=>null)
-      ||await window.fs.readFile('image.jpg',{encoding:'base64'}).catch(()=>null)
-      ||await window.fs.readFile('photo.jpg',{encoding:'base64'}).catch(()=>null);
-    if(data){
-      const img=document.getElementById('prof-img');
-      img.src='data:image/jpeg;base64,'+data;
-      img.style.display='block';
-      document.getElementById('ph-pl').style.display='none';
-    }
-  }catch(e){}
-})();
-
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
 },{threshold:0.1});
